@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :blogs, excepted: %i[edit update delete]
+  resources :blogs, except: %i[edit update delete]
 end
