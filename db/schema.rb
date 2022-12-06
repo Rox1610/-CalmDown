@@ -20,6 +20,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_203855) do
     t.integer "name"
   end
 
+  create_table "blogs", force: :cascade do |t|
+    t.date "date"
+    t.string "title"
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_blogs_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -38,4 +48,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_203855) do
   end
 
   add_foreign_key "users", "profiles"
+  add_foreign_key "blogs", "users"
 end
