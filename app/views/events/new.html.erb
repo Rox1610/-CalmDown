@@ -1,0 +1,5 @@
+<%= simple_form_for @event do |f| %>
+  <%= f.input :date, as: :date, html5: true, placeholder: "date de l'évènement" %>
+  <%= f.input :description, placeholder: "entrez la description de l'évènement" %>
+  <%= f.submit class: 'btn btn-flat' %>
+<% end %>

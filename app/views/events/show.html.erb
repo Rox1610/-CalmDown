@@ -1,0 +1,5 @@
+<h2><%= @event.date %></h2>
+<p><%= @event.description %></p>
+
+
+<%= link_to profile_path, method: :destroy, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'text-danger' %>
