@@ -1,0 +1,4 @@
+ <% @blogs.each do |blog| %>
+          <h3><%= link_to blog.title, blog_path(blog) %></h3>
+            <p><%= blog.content.first(25) %> ...</p>
+    <% end %>
