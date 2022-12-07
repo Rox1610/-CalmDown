@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :blogs, except: %i[edit update delete]
+  get "home", to: "pages#home"
+  resources :profiles, only: %i[new create]
 end
