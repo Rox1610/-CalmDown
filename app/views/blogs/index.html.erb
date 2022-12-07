@@ -1,4 +1,20 @@
+ <div class="container">
+
+ <%= form_with url: blogs_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an article"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+<br>
+<%= link_to 'Add an article', new_blog_path, class: 'btn btn-outline-warning' %>
+
+<br>
  <% @blogs.each do |blog| %>
           <h3><%= link_to blog.title, blog_path(blog) %></h3>
             <p><%= blog.content.first(25) %> ...</p>
     <% end %>
+</div>

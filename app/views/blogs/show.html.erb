@@ -1,5 +1,7 @@
 <h3><%= @blog.title %></h3>
 <%# following code to be replace with .first_name and .last_name when it will be created %>
-<h6><%= @blog.user%><%= @blog.user%></h6>
-<h6><%= @blog.date%></h6>
+<h6><%= @blog.user.first_name%>&nbsp&nbsp<%= @blog.user.last_name%> (<%= @blog.date %>)</h6>
 <p><%= @blog.content%></p>
+
+
+<%= link_to 'Return to blog', blogs_path, class: 'btn btn-outline-warning' %>
