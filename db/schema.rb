@@ -24,6 +24,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_210159) do
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
+  create_table "diaries", force: :cascade do |t|
+    t.integer "rating"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_diaries_on_event_id"
+    t.index ["user_id"], name: "index_diaries_on_user_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.text "description"
     t.bigint "user_id", null: false
@@ -59,6 +70,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_210159) do
   end
 
   add_foreign_key "blogs", "users"
+  add_foreign_key "diaries", "events"
+  add_foreign_key "diaries", "users"
   add_foreign_key "events", "users"
   add_foreign_key "users", "profiles"
 end

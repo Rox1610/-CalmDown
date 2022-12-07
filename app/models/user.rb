@@ -7,4 +7,6 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   belongs_to :profile, optional: true
   has_many :blogs
+  has_many :events
+  has_many :diaries
 end
