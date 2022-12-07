@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :events, except: %i[index]
+
+  get '/dashboard', to: 'dashboards#index', as: 'dashboard'
 end

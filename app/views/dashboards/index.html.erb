@@ -1,0 +1,12 @@
+<div class="calendar-container">
+  <%= month_calendar(events: @events, end_attribute: :end_time) do |date, events| %>
+    <%= date %>
+
+    <% events.each do |event| %>
+      <div class="event">  <-- We will add some style to the event class later so let's add it now -->
+        <p><%= link_to event.name, event_path(@event), class: 'btn btn-outline-warning' %></p>
+        <small><%= event.time unless event.multi_days? %></small>
+      </div>
+    <% end %>
+  <% end %>
+</div>
