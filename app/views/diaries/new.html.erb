@@ -1,0 +1,7 @@
+<div class="container">
+  <%= simple_form_for [@event, @diarie] do |f| %>
+    <%= f.input :rating, collection: Diarie.ratings.keys %>
+    <%= f.input :description, placeholder: "Explain how the event went" %>
+    <%= f.button :submit, 'Add your review', class: 'btn btn-flat' %>
+  <% end %>
+</div>

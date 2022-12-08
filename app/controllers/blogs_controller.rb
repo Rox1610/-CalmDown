@@ -2,7 +2,11 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: %i[show update]
 
   def index
-    @blogs = Blog.all
+    if params[:query].present?
+      @blogs = Blog.search_by_title_and_content(params[:query])
+    else
+      @blogs = Blog.all
+    end
   end
 
   def show
