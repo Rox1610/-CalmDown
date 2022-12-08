@@ -16,18 +16,6 @@ class PagesController < ApplicationController
   def dashboard
     redirect_to home_path
   end
-  # # def create
-  # #   @profile = Profile.new(params[:profile])
-  # #   @profile.user = current_user
-  # #   @profile.save
-  # #   redirect_to new_profile_path
-  # # end
-
-
-  # def test
-  #   @profile = Profile.new[:name]
-  #   raise
-  # end
   def kinesthetic
   end
 end
