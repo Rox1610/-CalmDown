@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
-  def index
+  def calendar
     # Scope your query to the dates being shown:
     start_date = params.fetch(:start_date, Date.today).to_date
     # For a monthly view:
