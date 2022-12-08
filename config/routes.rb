@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboards#index', as: 'dashboard'
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :events, except: %i[index]
   resources :blogs, except: %i[edit update delete]
+
+  resources :events, except: %i[index] do
+    resources :diaries, only: %i[new create]
+  end
+
   resources :resources, only: %i[index show]
 end

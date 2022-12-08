@@ -2,6 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
 
   def show
+    @diaries = Diarie.where(user_id: current_user.id)
   end
 
   def new
