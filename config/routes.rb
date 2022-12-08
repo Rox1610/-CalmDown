@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  get '/kinesthetic', to: 'pages#kinesthetic', as: 'kinesthetic'
   get '/dashboard', to: 'dashboards#index', as: 'dashboard'
   # Defines the root path route ("/")
   # root "articles#index"
@@ -11,4 +12,6 @@ Rails.application.routes.draw do
   resources :events, except: %i[index] do
     resources :diaries, only: %i[new create]
   end
+
+  resources :resources, only: %i[index show]
 end
