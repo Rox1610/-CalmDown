@@ -1,9 +1,15 @@
-
 .card-test {
   background: linear-gradient(-45deg, rgba(255, 255, 255, 0.5),rgba(255, 255, 255, 1),rgba(255, 255, 255, 0.25),rgba(255, 255, 255, 1));
   animation: gradient 20s ease infinite;
   background-size: 400% 400%;
-  border-radius: 10px
+  border-radius: 10px;
+  border: solid rgba(255, 255, 255, 1);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 12px;
+  transition: 0.3s;
+}
+
+.card-test:hover {
+  box-shadow: rgba(149, 157, 165, 0.4) 0px 4px 12px;
 }
 
 @keyframes gradient {
