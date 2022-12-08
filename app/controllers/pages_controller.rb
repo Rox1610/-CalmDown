@@ -28,4 +28,6 @@ class PagesController < ApplicationController
   #   @profile = Profile.new[:name]
   #   raise
   # end
+  def kinesthetic
+  end
 end
