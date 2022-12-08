@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :events, except: %i[index]
   resources :blogs, except: %i[edit update delete]
+  resources :resources, only: %i[index show]
 end
