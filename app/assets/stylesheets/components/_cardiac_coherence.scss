@@ -1,0 +1,36 @@
+.bubble {
+  animation-duration: 7s;
+	animation-iteration-count: infinite;
+  animation-name: bubble;
+	animation-timing-function: ease-in-out;
+  background-color: transparent;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+}
+
+@keyframes bubble {
+  0%   {transform: scale(1);}
+  25%  {transform: scale(0.75);}
+  37%  {transform: scale(0.63);}
+  50%  {transform: scale(0.50);}
+  62%  {transform: scale(0.63);}
+  75%  {transform: scale(0.75);}
+  100% {transform: scale(1);}
+}
+
+main {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,p {
+    color: #6E7B8B;
+    font-family: "Montserrat Alternates";
+    text-align: center;
+}
+
+circle {
+  justify-content: center
+}
