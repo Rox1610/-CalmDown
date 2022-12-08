@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :blogs, except: %i[edit update delete]
   get "home", to: "pages#home"
-  resources :profiles, only: %i[new create update]
+  resources :profiles, only: %i[new create]
   get "test", to: "pages#test"
 end

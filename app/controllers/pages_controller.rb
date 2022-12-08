@@ -14,7 +14,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    raise
+    redirect_to home_path
   end
   # # def create
   # #   @profile = Profile.new(params[:profile])
