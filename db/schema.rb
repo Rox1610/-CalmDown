@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_06_210159) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_08_162213) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +22,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_210159) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_blogs_on_user_id"
+  end
+
+  create_table "diaries", force: :cascade do |t|
+    t.integer "rating"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_diaries_on_event_id"
+    t.index ["user_id"], name: "index_diaries_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -39,6 +50,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_210159) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "name"
+  end
+
+  create_table "resources", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.integer "category"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_resources_on_profile_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,6 +79,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_210159) do
   end
 
   add_foreign_key "blogs", "users"
+  add_foreign_key "diaries", "events"
+  add_foreign_key "diaries", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "resources", "profiles"
   add_foreign_key "users", "profiles"
 end
