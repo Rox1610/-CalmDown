@@ -28,4 +28,9 @@ class PagesController < ApplicationController
   def dashboard
     raise
   end
+
+  def test
+    @profile = Profile.new[:name]
+    raise
+  end
 end

@@ -1,8 +1,65 @@
-<h1>PROFILE NEW PAGE</h1>
+<!DOCTYPE html>
+<html>
+<body>
 
-<%= simple_form_for(@profile) do |f| %>
-  <%= f.input :name, as: :text, html5: true, placeholder: 'Q1' %>
-  <%= f.input :name, as: :text, html5: true, placeholder: 'Q2' %>
-  <%= f.input :name, as: :text, html5: true, placeholder: 'Q3' %>
-  <%= f.submit class: 'btn btn-flat' %>
+<h1> <strong> PERSONALITY TEST </strong> </h1>
+<h2> Tell us what relaxes you </h2>
+
+<%= form_with url:profiles_path, method: :post do |form| %>
+
+<div class="card" style="width: 18rem;">
+  <%= form.label :aquarium, "A cinematic experience of an aquarium" %>
+  <%= form.check_box :aquarium %>
+</div>
+
+  <div class="card" style="width: 18rem;">
+    <%= form.label :river, "A calm flowing river" %>
+    <%= form.check_box :river %>
+  </div>
+
+<div class="card" style="width: 18rem;">
+  <%= form.label :mountains, "A beautiful landscape of mountains" %>
+  <%= form.check_box :mountains %>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <%= form.label :stars, "Travelling throught the stars" %>
+  <%= form.check_box :stars %>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <%= form.label :clouds, "Being over the clouds" %>
+  <%= form.check_box :clouds %>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <%= form.label :flute, "Flute soundscape" %>
+  <%= form.check_box :flute %>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <%= form.label :rain, "Calm rain sond" %>
+  <%= form.check_box :rain %>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <%= form.label :whale, "Singing whales" %>
+  <%= form.check_box :whale %>
+</div>
+
+<div class="card" style="width: 18rem;">
+    <%= form.label :mantra, "Mantra soundscape" %>
+    <%= form.check_box :mantra %>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <%= form.label :forest, "Quiet forest soundscape" %>
+  <%= form.check_box :forest %>
+</div>
+
+
+<%= form.submit %>
+
 <% end %>
+</body>
+</html>
