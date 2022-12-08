@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   resources :blogs, except: %i[edit update delete]
   get "home", to: "pages#home"
   resources :profiles, only: %i[new create]
-  get "test", to: "pages#test"
-
   resources :events, except: %i[index] do
     resources :diaries, only: %i[new create]
   end
