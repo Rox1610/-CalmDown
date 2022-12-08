@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get '/kinesthetic', to: 'pages#kinesthetic', as: 'kinesthetic'
   get '/dashboard/calendar', to: 'dashboards#calendar', as: 'calendar'
+  get '/dashboard', to: 'dashboards#index', as: 'dashboard'
   # Defines the root path route ("/")
   # root "articles#index"
   resources :blogs, except: %i[edit update delete]
