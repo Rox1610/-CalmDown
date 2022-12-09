@@ -4,88 +4,90 @@
 
 <h1> <strong> PERSONALITY TEST </strong> </h1>
 <h2> Tell us what relaxes you </h2>
+<p>(Select 3)</p>
 
 <%= form_with url:profiles_path, method: :post do |form| %>
 
-<div class="row">
+  <div class="row">
 
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <%= form.label :aquarium, "A cinematic experience of an aquarium" %>
-      <%= form.check_box :aquarium %>
-    </div>
-  </div>
-
-  <div class="col">
-      <div class="card" style="width: 18rem;">
-        <%= form.label :river, "A calm flowing river" %>
-        <%= form.check_box :river %>
+    <div class="col">
+      <div class="card-test" style="width: 18rem;">
+        <%= form.label :aquarium, "A cinematic experience of an aquarium" %>
+        <%= form.check_box :aquarium %>
       </div>
-  </div>
-
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <%= form.label :mountains, "A beautiful landscape of mountains" %>
-      <%= form.check_box :mountains %>
     </div>
-  </div>
 
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <%= form.label :stars, "Travelling throught the stars" %>
-      <%= form.check_box :stars %>
+    <div class="col">
+        <div class="card-test" style="width: 18rem;">
+          <%= form.label :river, "A calm flowing river" %>
+          <%= form.check_box :river %>
+        </div>
     </div>
-  </div>
 
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <%= form.label :clouds, "Being over the clouds" %>
-      <%= form.check_box :clouds %>
+    <div class="col">
+      <div class="card-test" style="width: 18rem;">
+        <%= form.label :mountains, "A beautiful landscape of mountains" %>
+        <%= form.check_box :mountains %>
+      </div>
     </div>
-  </div>
 
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <%= form.label :flute, "Flute soundscape" %>
-      <%= form.check_box :flute %>
+    <div class="col">
+      <div class="card-test" style="width: 18rem;">
+        <%= form.label :stars, "Travelling throught the stars" %>
+        <%= form.check_box :stars %>
+      </div>
     </div>
-  </div>
 
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <%= form.label :rain, "Calm rain sond" %>
-      <%= form.check_box :rain %>
+    <div class="col">
+      <div class="card-test" style="width: 18rem;">
+        <%= form.label :clouds, "Being over the clouds" %>
+        <%= form.check_box :clouds %>
+      </div>
     </div>
-  </div>
 
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <%= form.label :whale, "Singing whales" %>
-      <%= form.check_box :whale %>
+    <div class="col">
+      <div class="card-test" style="width: 18rem;">
+        <%= form.label :flute, "Flute soundscape" %>
+        <%= form.check_box :flute %>
+      </div>
     </div>
-  </div>
 
-
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-        <%= form.label :mantra, "Mantra soundscape" %>
-        <%= form.check_box :mantra %>
+    <div class="col">
+      <div class="card-test" style="width: 18rem;">
+        <%= form.label :rain, "Calm rain sound" %>
+        <%= form.check_box :rain %>
+      </div>
     </div>
-  </div>
 
-  <div class="col">
-    <div class="card" style="width: 18rem;">
-      <%= form.label :forest, "Quiet forest soundscape" %>
-      <%= form.check_box :forest %>
+    <div class="col">
+      <div class="card-test" style="width: 18rem;">
+        <%= form.label :whale, "Singing whales" %>
+        <%= form.check_box :whale %>
+      </div>
     </div>
+
+
+    <div class="col">
+      <div class="card-test" style="width: 18rem;">
+          <%= form.label :mantra, "Mantra soundscape" %>
+          <%= form.check_box :mantra %>
+      </div>
+    </div>
+
+    <div class="col">
+      <%# <div class="checkbox-test" style="width: 18rem;"> %>
+        <%= form.label :forest, "Quiet forest soundscape", class: "checkbox-test" %>
+        <%= form.check_box :forest, class: "checkbox" %>
+      <%# </div> %>
+    </div>
+
   </div>
 
- </div>
-
-
-<%= form.submit %>
+  <%= form.submit %>
 
 <% end %>
+
+
 <br>
 <br>
 <br>
