@@ -15,4 +15,8 @@ class PagesController < ApplicationController
 
   def kinesthetic
   end
+
+  def program
+    @resources = Resource.all
+  end
 end
