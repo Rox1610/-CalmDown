@@ -16,6 +16,10 @@ class PagesController < ApplicationController
   def dashboard
     redirect_to home_path
   end
+
   def kinesthetic
+  end
+
+  def program
   end
 end
