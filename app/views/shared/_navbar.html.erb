@@ -1,28 +1,39 @@
 <nav class="navbar navbar-expand fixed-bottom mt-5 p-2">
-  <a href="#" class="nav-link">
-    <i class="fa-regular fa-comments nav-icon"></i>
-    <span class="nav-text">Blog</span>
-  </a>
+
+    <a href="#" class="nav-link">
+    <%= link_to "Blog", blogs_path, class: "nav-link" %>
+      <i class="fa-regular fa-comments nav-icon"></i>
+      <%# <span class="nav-text">Blog</span> %>
+    </a>
+
   <a href="#" class="nav-link nav-link">
+  <%= link_to "Calendar", calendar_path, class: "nav-link" %>
     <i class="fa-regular fa-calendar nav-icon"></i>
-    <span class="nav-text">Calendar</span>
+    <%# <span class="nav-text">Calendar</span> %>
   </a>
+
+
   <a href="#" class="nav-link">
+  <%= link_to "Add event", new_event_path, class: "nav-link" %>
     <i class="fa-solid fa-plus nav-icon"></i>
-    <span class="nav-text">Add event</span>
+    <%# <span class="nav-text">Add event</span> %>
   </a>
+
+
   <a href="#" class="nav-link">
+  <%= link_to "Program", resources_path, class: "nav-link" %>
     <i class="fa-solid fa-list nav-icon"></i>
-    <span class="nav-text">Program</span>
+    <%# <span class="nav-text">Program</span> %>
   </a>
-  <a href="new_user_session_path" class="nav-link nav-link--active">
+
+
+  <a href="#" class="nav-link">
     <%# <i class="fa-regular fa-circle-user nav-icon"></i>
     <span class="nav-text">Dashboard</span> %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-          <%# <i class="fa-light fa-circle-user"></i> --->  Would be nice to change "login" to this icon! %>
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
@@ -40,4 +51,5 @@
       </ul>
     </div>
   </a>
+
 </nav>
