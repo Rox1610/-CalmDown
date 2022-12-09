@@ -1,3 +1,5 @@
-<% @resources.each do |resource| %>
-  <iframe width="560" height="315" src="<%= resource.content %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<% end %>
+<div class="container">
+  <% @resources.each do |resource| %>
+    <iframe width="350" height="175" src="<%= resource.content %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <% end %>
+</div>

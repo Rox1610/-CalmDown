@@ -1,11 +1,25 @@
 
 
 <div class="container">
+  <h1>Program</h1>
+  <%= link_to kinesthetic_path do %>
+    <i class="fa-solid fa-dice-d20"></i>
+  <% end %>
+&nbsp&nbsp
+  <%= link_to resources_path do%>
+    <i class="fa-solid fa-clapperboard"></i>
+  <% end %>
 
 
-
-  <div class="card-test">
+  <div class="card-test mb-3">
+    <h6>5 hours before - Demo "stressing" Day</h6>
+    <p>Take a place confortably and listen to the whale sing from Tadoussac </p>
     <p><i class="fa-solid fa-play"></i>  &nbsp&nbspSound</p>
   </div>
 
+  <div class="card-test">
+    <h6>2 days before - Demo "stressing" Day</h6>
+    <p>Take a place confortably and relax by watching the aquarium </p>
+    <iframe width="350" height="175" src="<%= @resources.first.content %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 </div>

@@ -21,5 +21,6 @@ class PagesController < ApplicationController
   end
 
   def program
+    @resources = Resource.all
   end
 end
