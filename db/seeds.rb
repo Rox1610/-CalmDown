@@ -1,3 +1,4 @@
+Resource.destroy_all
 Blog.destroy_all
 Event.destroy_all
 Diarie.destroy_all
