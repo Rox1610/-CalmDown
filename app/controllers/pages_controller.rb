@@ -19,4 +19,7 @@ class PagesController < ApplicationController
   def program
     @resources = Resource.all
   end
+  
+   def landing
+   end
 end

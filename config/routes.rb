@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   end
 
   resources :resources, only: %i[index show]
+
+  get '/landing', to: 'pages#landing', as: 'landing'
 end
