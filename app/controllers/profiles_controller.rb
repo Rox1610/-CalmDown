@@ -26,7 +26,7 @@ class ProfilesController < ApplicationController
     if current_user.save
       redirect_to calendar_path
     else
-      redirect_to profile_new
+      render :new
     end
   end
 end
