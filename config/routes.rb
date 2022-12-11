@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "pages#landing"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  get '/home', to: 'pages#home', as: 'home'
   get '/kinesthetic', to: 'pages#kinesthetic', as: 'kinesthetic'
   get '/dashboard/calendar', to: 'dashboards#calendar', as: 'calendar'
   get '/dashboard', to: 'dashboards#index', as: 'dashboard'
@@ -18,5 +19,5 @@ Rails.application.routes.draw do
 
   resources :resources, only: %i[index show]
 
-  get '/landing', to: 'pages#landing', as: 'landing'
+
 end
