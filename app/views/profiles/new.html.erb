@@ -1,13 +1,10 @@
 <div class="container">
-
   <h1 class="mb-4">Personality test</h1>
   <h2> Tell us what relaxes you </h2>
   <p class="mb-4">(Select 3)</p>
 
   <%= form_with url:profiles_path, method: :post do |form| %>
-
     <div class="row row-cols-2 background-personality">
-
       <div class="col">
         <%= form.check_box :aquarium, class: "checkbox" %>
         <%= form.label :aquarium, "A cinematic experience of an aquarium" %>
@@ -64,13 +61,5 @@
     <div class="d-grid gap-2 col-8 mx-auto my-3">
       <%= form.submit class: "btn btn-primary btn-lg"%>
     </div>
-
   <% end %>
-
 </div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
