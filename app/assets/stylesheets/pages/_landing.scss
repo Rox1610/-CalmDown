@@ -1,25 +1,19 @@
 body {
-font-family: "Montserrat Alternates";
-
+  font-family: "Montserrat Alternates";
 }
-
-.background-landing{
-  background-image: image-url('landing.jpeg');
-  background-size: cover;
-}
-
-
 .landing-content {
-height: 450px;
-
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
 }
 
 h1 {
-font-size: 30px;
-
+  font-size: 30px;
 }
 
 .btn-landing {
-background-color: #137BB3;
-color: white;
+  background-color: #137BB3;
+  color: white;
 }

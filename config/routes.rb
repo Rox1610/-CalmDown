@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root to: "pages#landing"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+
   get '/home', to: 'pages#home', as: 'home'
   get '/kinesthetic', to: 'pages#kinesthetic', as: 'kinesthetic'
+  get '/audio', to: 'resources#audio', as: 'audio'
   get '/dashboard/calendar', to: 'dashboards#calendar', as: 'calendar'
   get '/dashboard', to: 'dashboards#index', as: 'dashboard'
   get '/program', to: 'pages#program', as: 'program'
