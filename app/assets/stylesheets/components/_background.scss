@@ -1,3 +1,64 @@
-body {
+.background-landing{
+  background-image: image-url('landing.jpeg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.background-personality{
+  background-image: image-url('landing.jpeg');
+  background-size: cover;
+  height: 100vh;
+}
+.background-dash{
+  background-image: image-url('landing.jpeg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.background-blog{
+  background-image: image-url('blogs.jpeg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.background-calendar{
+  background-image: image-url('sign-in.jpeg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.background-cardiac{
+  background-image: image-url('landing.jpeg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.background-audio{
   background-image: image-url('auditive.png');
+  background-size: cover;
+  height: 100vh;
+}
+
+.background-video{
+  background-image: image-url('blogs.jpeg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.background-event{
+  background-image: image-url('event.jpeg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.background-program{
+  background-image: image-url('events-2.jpeg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.background-login{
+  background-image: image-url('sign-in.jpeg');
+  background-size: cover;
+  height: 100vh;
 }

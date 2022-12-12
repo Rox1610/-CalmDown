@@ -1,25 +1,28 @@
-<h1>Dashboard</h1>
 
-<div class="container d-flex justify-content-center shadow p-3 mb-5 bg-white rounded">
-  <h4>A journey of a thousand <br>miles always begins with a <br>first step.</h4>
-</div>
+<div class="background-dash" >
+  <h1>Dashboard</h1>
 
-<div class="container d-flex justify-content-center shadow p-3 mb-5 bg-white rounded">
-  <div>
-    <h6>Statistique</h6><br>
+  <div class="container d-flex justify-content-center shadow p-3 mb-5 bg-white rounded">
+    <h4>A journey of a thousand <br>miles always begins with a <br>first step.</h4>
   </div>
-  <div>
-    <img src="<%= asset_path('fake_graph.jpg') %>" class="img-fluid" alt="feeling-graph">
-  </div>
-</div>
 
-<div class="container d-flex justify-content-center shadow p-3 mb-5 bg-white rounded">
-  <div>
-    <h6>Next event</h6><br>
+  <div class="container d-flex justify-content-center shadow p-3 mb-5 bg-white rounded">
+    <div>
+      <h6>Statistique</h6><br>
+    </div>
+    <div>
+      <img src="<%= asset_path('fake_graph.jpg') %>" class="img-fluid" alt="feeling-graph">
+    </div>
   </div>
-  <div class="container">
-  <%= "You haven't any events yet!" if @events.first.nil? %>
-    <p><%= @events.first.start_time if @events.first%></p><p><%= @events.first.end_time if @events.first%></p>
-    <p><%= @events.first.name if @events.first%></p>
+
+  <div class="container d-flex justify-content-center shadow p-3 mb-5 bg-white rounded">
+    <div>
+      <h6>Next event</h6><br>
+    </div>
+    <div class="container">
+    <%= "You haven't any events yet!" if @events.first.nil? %>
+      <p><%= @events.first.start_time if @events.first%></p><p><%= @events.first.end_time if @events.first%></p>
+      <p><%= @events.first.name if @events.first%></p>
+    </div>
   </div>
 </div>
