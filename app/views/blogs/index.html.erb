@@ -13,8 +13,11 @@
 <%= link_to 'Add an article', new_blog_path, class: 'btn btn-outline-warning' %>
 
 <br>
- <% @blogs.each do |blog| %>
-          <h3><%= link_to blog.title, blog_path(blog) %></h3>
-            <p><%= blog.content.first(25) %> ...</p>
-    <% end %>
+
+  <% @blogs.each do |blog| %>
+    <div class="card">
+      <h3><%= link_to blog.title, blog_path(blog) %></h3>
+      <p><%= blog.content.first(25) %> ...</p>
+    </div>
+  <% end %>
 </div>
