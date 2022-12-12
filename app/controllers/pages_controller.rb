@@ -13,13 +13,10 @@ class PagesController < ApplicationController
     end
   end
 
-  def kinesthetic
-  end
-
   def program
     @resources = Resource.all
   end
-  
-   def landing
-   end
+
+  def landing
+  end
 end
