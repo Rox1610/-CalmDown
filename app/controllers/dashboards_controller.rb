@@ -7,6 +7,6 @@ class DashboardsController < ApplicationController
   end
 
   def index
-    @events = Event.where(user_id: current_user.id)
+    @events = current_user.events.where('start_time >= ?', Date.today).order("start_time ASC").first
   end
 end

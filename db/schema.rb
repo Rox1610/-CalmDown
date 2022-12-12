@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_08_162213) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_12_220726) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,6 +46,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_162213) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
+  create_table "events_resources", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "resource_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_events_resources_on_event_id"
+    t.index ["resource_id"], name: "index_events_resources_on_resource_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,6 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_162213) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
     t.index ["profile_id"], name: "index_resources_on_profile_id"
   end
 
@@ -82,6 +92,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_162213) do
   add_foreign_key "diaries", "events"
   add_foreign_key "diaries", "users"
   add_foreign_key "events", "users"
+  add_foreign_key "events_resources", "events"
+  add_foreign_key "events_resources", "resources"
   add_foreign_key "resources", "profiles"
   add_foreign_key "users", "profiles"
 end

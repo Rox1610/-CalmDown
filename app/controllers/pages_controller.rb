@@ -17,9 +17,11 @@ class PagesController < ApplicationController
   end
 
   def program
-    @resources = Resource.all
+    @event = current_user.events.where('start_time >= ?', Date.today).order("start_time ASC").first
+    @duration = (@event.start_time - DateTime.now) / (60 * 60)
+
   end
-  
-   def landing
-   end
+
+  def landing
+  end
 end
