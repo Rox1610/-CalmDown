@@ -7,20 +7,22 @@
   transform: scale(0);
 }
 
-.checkbox + .checkbox-test {
+.checkbox + label {
   cursor: pointer;
   display: inline-block;
-  font-size: 0.7rem;
-  border-radius: 50rem;
+  font-size: 0.9rem;
+  border-radius: 10px;
   padding: 0.1rem 0.5rem;
-  background-color: #ECEAFF;
-  color: #7E73FF;
-  border: 1px solid #7E73FF;
-  margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
+  background: rgba(255, 255, 255, 0.5);
+  color: #000000;
+  border: solid rgba(255, 255, 255, 1);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 12px;
+  margin: 0.5rem;
+  transform: 0.3s;
 }
 
-.checkbox:checked + .checkbox-test {
-  background-color: #7E73FF;
-  color: white;
+.checkbox:checked + label {
+  background-color: rgba(255, 255, 255, 1);
+  border: solid rgba(255, 255, 255, 1);
+  box-shadow: rgba(149, 157, 165, 0.4) 0px 4px 12px;
 }

@@ -1,102 +1,76 @@
-<!DOCTYPE html>
-<html>
-<body>
+<div class="container">
 
-<h1> <strong> PERSONALITY TEST </strong> </h1>
-<h2> Tell us what relaxes you </h2>
-<p>(Select 3)</p>
+  <h1 class="mb-4">Personality test</h1>
+  <h2> Tell us what relaxes you </h2>
+  <p class="mb-4">(Select 3)</p>
 
-<%= form_with url:profiles_path, method: :post do |form| %>
+  <%= form_with url:profiles_path, method: :post do |form| %>
 
-  <div class="row">
+    <div class="row row-cols-2">
 
-    <div class="col">
-      <div class="card-test" style="width: 18rem;">
+      <div class="col">
+        <%= form.check_box :aquarium, class: "checkbox" %>
         <%= form.label :aquarium, "A cinematic experience of an aquarium" %>
-        <%= form.check_box :aquarium %>
       </div>
-    </div>
 
-    <div class="col">
-        <div class="card-test" style="width: 18rem;">
-          <%= form.label :river, "A calm flowing river" %>
-          <%= form.check_box :river %>
-        </div>
-    </div>
+      <div class="col">
+        <%= form.check_box :river, class: "checkbox" %>
+        <%= form.label :river, "A calm flowing river" %>
+      </div>
 
-    <div class="col">
-      <div class="card-test" style="width: 18rem;">
+      <div class="col">
+        <%= form.check_box :mountains, class: "checkbox" %>
         <%= form.label :mountains, "A beautiful landscape of mountains" %>
-        <%= form.check_box :mountains %>
       </div>
-    </div>
 
-    <div class="col">
-      <div class="card-test" style="width: 18rem;">
+      <div class="col">
+        <%= form.check_box :stars, class: "checkbox" %>
         <%= form.label :stars, "Travelling throught the stars" %>
-        <%= form.check_box :stars %>
       </div>
-    </div>
 
-    <div class="col">
-      <div class="card-test" style="width: 18rem;">
+      <div class="col">
+        <%= form.check_box :clouds, class: "checkbox" %>
         <%= form.label :clouds, "Being over the clouds" %>
-        <%= form.check_box :clouds %>
       </div>
-    </div>
 
-    <div class="col">
-      <div class="card-test" style="width: 18rem;">
+      <div class="col">
+        <%= form.check_box :flute, class: "checkbox" %>
         <%= form.label :flute, "Flute soundscape" %>
-        <%= form.check_box :flute %>
       </div>
-    </div>
 
-    <div class="col">
-      <div class="card-test" style="width: 18rem;">
+      <div class="col">
+        <%= form.check_box :rain, class: "checkbox" %>
         <%= form.label :rain, "Calm rain sound" %>
-        <%= form.check_box :rain %>
       </div>
-    </div>
 
-    <div class="col">
-      <div class="card-test" style="width: 18rem;">
+      <div class="col">
+        <%= form.check_box :whale, class: "checkbox" %>
         <%= form.label :whale, "Singing whales" %>
-        <%= form.check_box :whale %>
       </div>
-    </div>
 
 
-    <div class="col">
-      <div class="card-test" style="width: 18rem;">
+      <div class="col">
+          <%= form.check_box :mantra, class: "checkbox" %>
           <%= form.label :mantra, "Mantra soundscape" %>
-          <%= form.check_box :mantra %>
       </div>
-    </div>
 
-    <div class="col">
-      <%# <div class="checkbox-test" style="width: 18rem;"> %>
-        <%= form.label :forest, "Quiet forest soundscape", class: "checkbox-test" %>
+      <div class="col">
         <%= form.check_box :forest, class: "checkbox" %>
-      <%# </div> %>
+        <%= form.label :forest, "Quiet forest soundscape" %>
+      </div>
+
     </div>
 
-  </div>
+    <div class="d-grid gap-2 col-8 mx-auto my-3">
+      <%= form.submit class: "btn btn-primary btn-lg"%>
+    </div>
 
-  <%= form.submit %>
+  <% end %>
 
-<% end %>
+</div>
 
-
 <br>
 <br>
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-</body>
-</html>
