@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/dashboard/calendar', to: 'dashboards#calendar', as: 'calendar'
   get '/dashboard', to: 'dashboards#index', as: 'dashboard'
   get '/program', to: 'pages#program', as: 'program'
+  get '/video', to: 'resources#video', as: 'video'
   # Defines the root path route ("/")
   # root "articles#index"
   resources :blogs, except: %i[edit update delete]
@@ -15,8 +16,6 @@ Rails.application.routes.draw do
   resources :events, except: %i[index] do
     resources :diaries, only: %i[new create]
   end
-
-  resources :resources, only: %i[index show]
 
   get '/landing', to: 'pages#landing', as: 'landing'
 end

@@ -1,5 +1,5 @@
 class ResourcesController < ApplicationController
-  def index
+  def video
     @resources = Resource.all
   end
 end
