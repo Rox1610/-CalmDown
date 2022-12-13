@@ -7,6 +7,7 @@ class DashboardsController < ApplicationController
   end
 
   def index
-    @events = Event.where(user_id: current_user.id)
+    timezone_offset = -18_000
+    @event = current_user.events.where('start_time >= ?', (Time.current + timezone_offset)).order("start_time ASC").first
   end
 end

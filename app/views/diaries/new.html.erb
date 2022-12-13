@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container padding-header-navbar">
   <%= simple_form_for [@event, @diarie] do |f| %>
     <%= f.input :rating, collection: Diarie.ratings.keys %>
     <%= f.input :description, placeholder: "Explain how the event went" %>

@@ -5,11 +5,12 @@ Rails.application.routes.draw do
 
 
   get '/home', to: 'pages#home', as: 'home'
-  get '/kinesthetic', to: 'pages#kinesthetic', as: 'kinesthetic'
+  get '/kinesthetic', to: 'resources#kinesthetic', as: 'kinesthetic'
   get '/audio', to: 'resources#audio', as: 'audio'
   get '/dashboard/calendar', to: 'dashboards#calendar', as: 'calendar'
   get '/dashboard', to: 'dashboards#index', as: 'dashboard'
   get '/program', to: 'pages#program', as: 'program'
+  get '/video', to: 'resources#video', as: 'video'
   # Defines the root path route ("/")
   # root "articles#index"
   resources :blogs, except: %i[edit update delete]
@@ -18,8 +19,4 @@ Rails.application.routes.draw do
   resources :events, except: %i[index] do
     resources :diaries, only: %i[new create]
   end
-
-  resources :resources, only: %i[index show]
-
-
 end
