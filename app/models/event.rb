@@ -3,6 +3,8 @@ class Event < ApplicationRecord
   validates :start_time, presence: true
   validates :end_time, presence: true
   has_one :diarie
+  has_many :events_resources
+  has_many :resources, through: :events_resources
 
   default_scope -> { order(:start_time) }  # Our meetings will be ordered by their start_time by default
 

@@ -20,9 +20,8 @@
       <h6>Next event</h6><br>
     </div>
     <div class="container">
-    <%= "You haven't any events yet!" if @events.first.nil? %>
-      <p><%= @events.first.start_time if @events.first%></p><p><%= @events.first.end_time if @events.first%></p>
-      <p><%= @events.first.name if @events.first%></p>
+      <p><%= @events.start_time if @events%></p><p><%= @events.end_time if @events%></p>
+      <p><%= @events.name if @events%></p>
     </div>
   </div>
 </div>
