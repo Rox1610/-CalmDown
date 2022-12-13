@@ -1,4 +1,4 @@
- <div class="container background-blog">
+ <div class="container background-blog pt-3">
 
  <%= form_with url: blogs_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
@@ -10,14 +10,22 @@
 <% end %>
 
 <br>
-<%= link_to 'Add an article', new_blog_path, class: 'btn btn-outline-warning' %>
-
+<%= link_to new_blog_path, class: 'mb-2' do %>
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white" class="bi bi-plus-lg" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+</svg>
+<% end %>
 <br>
 
   <% @blogs.each do |blog| %>
-    <div class="card">
-      <h3><%= link_to blog.title, blog_path(blog) %></h3>
-      <p><%= blog.content.first(25) %> ...</p>
+
+    <div class="card text-dark bg-light mb-3" style="max-width: 18rem align-items-center pt-2 rounded-top-3">
+      <div class="card-header">
+        <h3 class="card-title fluid"><%= link_to blog.title, blog_path(blog) %></h3>
+      </div>
+      <div class="card-body ">
+      <p class="card-text"><%= blog.content.first(25) %> ...</p>
+      </div>
     </div>
   <% end %>
 </div>
