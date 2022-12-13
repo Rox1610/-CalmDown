@@ -16,12 +16,11 @@ class PagesController < ApplicationController
   def kinesthetic
   end
 
-  def program
-    @event = current_user.events.where('start_time >= ?', Date.today).order("start_time ASC").first
-    @duration = (@event.start_time - DateTime.now) / (60 * 60)
-
+  def landing
   end
 
-  def landing
+  def program
+    timezone_offset = -18_000
+    @event = current_user.events.where('start_time >= ?', (Time.current + timezone_offset)).order("start_time ASC").first
   end
 end

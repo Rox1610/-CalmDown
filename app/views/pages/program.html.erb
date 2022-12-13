@@ -8,45 +8,15 @@
     <i class="fa-solid fa-clapperboard"></i>
   <% end %>
 
-
-  <div class="card-test mb-3">
-    <% case @duration %>
-    <% when 47.0..94.0 %>
-      <h6><%= "5"%> hours before - <%=  @event.name%> Day</h6>
-      <p><%= @resources[5].description %></p>
-      <iframe width="100%" height="60" src="<%= @resources[5].content %>" frameborder="0" ></iframe>
-    <% when 24.0..47.0 %>
-      <h6><%= "2"%> hours before - <%=  @event.name%> Day</h6>
-      <p><%= @resources[6].description %></p>
-      <iframe width="100%" height="60" src="<%= @resources[6].content %>" frameborder="0" ></iframe>
-    <% when 1.0..23.9 %>
-      <h6><%= "30"%> minutes before - <%=  @event.name%> Day</h6>
-      <p><%= @resources[7].description %></p>
-      <iframe width="100%" height="60" src="<%= @resources[7].content %>" frameborder="0" ></iframe>
-    <% when 0.0..0.9 %>
-      <h6><%=  @event.name%></h6>
-      <p><%= @resources[8].description %></p>
-      <iframe width="100%" height="60" src="<%= @resources[8].content %>" frameborder="0" ></iframe>
-    <% end %>
-  </div>
-
-  <div class="card-test">
-    <% case @duration %>
-    <% when 47.0..94.0 %>
-      <h6><%= "2"%> days before - <%=  @event.name%> Day</h6>
-      <p><%= @resources[0].description %> </p>
-      <iframe width="350" height="175" src="<%= @resources[0].content %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <% when 24.0..47.0 %>
-      <h6><%= "1"%> day before - <%=  @event.name%> Day</h6>
-      <p><%= @resources[1].description %> </p>
-      <iframe width="350" height="175" src="<%= @resources[1].content %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <% when 1.0..23.9 %>
-      <h6><%= "1"%> hour before - <%=  @event.name%> Day</h6>
-      <p><%= @resources[2].description %> </p>
-      <iframe width="350" height="175" src="<%= @resources[2].content %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <% when 0.0..0.9 %>
-      <p><%= @resources[3].description %> </p>
-      <iframe width="350" height="175" src="<%= @resources[3].content %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <% end %>
-  </div>
+  <% @event.events_resources.each do |events_resource|%>
+    <div class="card-test">
+      <h6><%= @event.name %></h6>
+      <p><%= events_resource.resource.description %></p>
+      <% if events_resource.resource.category == 0 %>
+        <iframe width="350" height="175" src="<%= events_resource.resource.content %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <% else %>
+        <iframe width="100%" height="60" src="<%= events_resource.resource.content %>" frameborder="0" ></iframe>
+      <% end %>
+  <% end %>
+    </div>
 </div>
