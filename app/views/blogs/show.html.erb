@@ -1,10 +1,15 @@
 
-<div class="background-blog padding-header-navbar">
-  <h3><%= @blog.title %></h3>
-  <%# following code to be replace with .first_name and .last_name when it will be created %>
+<div class="background-blog padding-header-navbar py-80px">
+<h1>Blog</h1>
+  <div class="card text-dark bg-light mb-3 mx-2" style="max-width: 18rem align-items-center pt-2">
+    <div class="card-header">
+      <h3 class="card-title-general"><%= @blog.title %></h3>
+      <h6><%= @blog.user.first_name%>&nbsp&nbsp<%= @blog.user.last_name%> (<%= @blog.date %>)</h6>
+    </div>
 
-  <h6><%= @blog.user.first_name%>&nbsp&nbsp<%= @blog.user.last_name%> (<%= @blog.date %>)</h6>
-  <p><%= @blog.content%></p>
-
-  <%= link_to 'Return to blog', blogs_path, class: 'btn btn-outline-warning' %>
+    <div class="card-body">
+      <p class="card-text"><%= @blog.content%></p>
+    </div>
+  </div>
+  <%= link_to 'Return to blog', blogs_path, class: 'text-dark text-decoration-none' %>
 </div>
