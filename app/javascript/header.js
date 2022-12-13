@@ -1,8 +1,6 @@
-console.log("hello");
-
-var previousScrollPosition = window.pageYOffset;
+let previousScrollPosition = window.pageYOffset;
 window.onscroll = function() {
-  var currentScrollPosition = window.pageYOffset;
+  let currentScrollPosition = window.pageYOffset;
   if (previousScrollPosition > currentScrollPosition) {
     document.querySelector("header").style.top = "0";
   } else {
