@@ -13,9 +13,6 @@ class PagesController < ApplicationController
     end
   end
 
-  def kinesthetic
-  end
-
   def landing
   end
 
