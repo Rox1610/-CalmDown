@@ -4,7 +4,7 @@
   <p class="mb-4">(Select 3)</p>
 
   <%= form_with url:profiles_path, method: :post do |form| %>
-    <div class="row row-cols-2 background-personality">
+    <div class="row row-cols-2 background-personality padding-header-navbar">
       <div>
         <%= form.check_box :aquarium, class: "checkbox", data: {action: "change->profile#onCheck", "profile-target": "checkbox"} %>
         <%= form.label :aquarium, "A cinematic experience of an aquarium" %>
