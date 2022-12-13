@@ -1,5 +1,13 @@
-<header class="header static-top">
-  <div class="container-fluid justify-content-center">
-    <h1>CalmDown</h1>
+<header class="header static-top d-flex">
+  <div class="container-fluid">
+    <h1 class="header-h1">CalmDown</h1>
   </div>
+    <div>
+      <% if user_signed_in? %>
+        <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "logout-link" do %>
+        <i class="fa-solid fa-arrow-right-from-bracket logout-icon"></i>
+        <%# <span class="logout-text">Logout</span> %>
+        <% end %>
+      <% end %>
+    </div>
 </header>
