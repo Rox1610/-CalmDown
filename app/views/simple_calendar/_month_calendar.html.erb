@@ -14,7 +14,7 @@
       <div class="d-flex align-items-center justify-content-around">
         <div class="calendar-heading my-2 d-flex justify-content-center">
           <%= link_to t('simple_calendar.previous', default: '<'), calendar.url_for_previous_view, class: 'btn btn-primary' %>
-          <span class="calendar-title btn btn-outline-dark"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+          <span class="calendar-title btn btn-outline-dark btn btn-light"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
           <%= link_to t('simple_calendar.next', default: '>'), calendar.url_for_next_view, class: 'btn btn-primary' %>
         </div>
       </div>
