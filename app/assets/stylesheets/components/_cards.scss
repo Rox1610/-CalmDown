@@ -16,7 +16,6 @@ p {
   font-size: 10px;
   color: #000000;
   font-family: "Montserrat Alternates";
-  text-align: center;
 }
 
 .card-header-general{
@@ -35,6 +34,7 @@ p {
 .card-body{
   font-family: $ms-font;
   font-size: 12px;
+  text-align: justify;
 }
 
 .card-header{
