@@ -24,9 +24,47 @@
   color: #ffffff;
 }
 
-.calendar-container1 {
+.calendar-container {
   background-color: rgba(255, 255, 255, 0.5);
   color: #fff;
   border-radius: 5px;
   border: 3px solid white;
+}
+
+.calendar-container .simple-calendar {
+  .day {}
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .prev-month {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  }
+
+  .next-month.future {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+      }
+
+  .today.current-month {
+    background: #137BB3;
+    border-radius: 5px;
+      }
+
+  .current-month {
+    background: white;
+    border-radius: 5px;
+      }
+
+  .future {}
+  .start-date {}
+
+  .past {}
+  .has-events {}
 }
