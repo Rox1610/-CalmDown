@@ -5,6 +5,7 @@
   background:rgba(255, 255, 255, 1);
   display: flex;
   overflow-x: auto;
+  margin-top: auto;
 }
 
 .nav-link {
@@ -50,7 +51,3 @@
   -webkit-tap-highlight-color: transparent;
   transition: 0.3s;
 }
-
-// .nav-link--active {
-//   color: #009578;
-// }
