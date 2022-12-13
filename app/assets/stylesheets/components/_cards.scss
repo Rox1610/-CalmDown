@@ -45,3 +45,31 @@ p {
       background-position: 0% 50%;
   }
 }
+
+.card-header-general{
+  font-family: $ms-font;
+  font-size: 15px;
+  font-weight: bold;
+  border-top-left-radius : 12px;
+  border-top-right-radius: 12px;
+}
+
+.card{
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-body{
+  font-family: $ms-font;
+  font-size: 12px;
+}
+
+.card-header{
+  box-shadow: -8px 7px 21px lightgrey;
+  background-color: white;
+
+  }
+
+  .card-frame{
+    border-radius: 15px;
+  }

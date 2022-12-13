@@ -1,26 +1,26 @@
-// $card-spacer-y:                     $spacer;
-// $card-spacer-x:                     $spacer;
-// $card-title-spacer-y:               $spacer * .5;
-// $card-border-width:                 $border-width;
-// $card-border-radius:                $border-radius;
-// $card-border-color:                 rgba($black, .125);
-// $card-inner-border-radius:          subtract($card-border-radius, $card-border-width);
-// $card-cap-padding-y:                $card-spacer-y * .5;
-// $card-cap-padding-x:                $card-spacer-x;
-// $card-cap-bg:                       rgba($black, .03);
-// $card-cap-color:                    null;
-// $card-height:                       null;
-// $card-color:                        null;
-// $card-bg:                           $white;
-// $card-img-overlay-padding:          $spacer;
-// $card-group-margin:                 $grid-gutter-width * .5;
+.button-search{
+  margin-left: calc(5px - 100%);
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: 4px;
+  box-shadow: -8px 7px 21px rgb(182, 182, 182);
+  border: solid 1px lightgray;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
 
-// .blog-card{
-//   card-spacer-y: 2px;
+#query{
+  padding-left: 40px;
+  border-radius: 50px;
+  margin-bottom: -5px;
 
-// }
+}
 
-.card-header{
-box-shadow: 1px 5px lightgray ;
-
+.fa-magnifying-glass{
+  width: 100%;
+  height: 100%;
+  margin: -30px;
 }
