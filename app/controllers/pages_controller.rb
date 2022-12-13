@@ -13,10 +13,11 @@ class PagesController < ApplicationController
     end
   end
 
-  def program
-    @resources = Resource.all
+  def landing
   end
 
-  def landing
+  def program
+    timezone_offset = -18_000
+    @event = current_user.events.where('start_time >= ?', (Time.current + timezone_offset)).order("start_time ASC").first
   end
 end
