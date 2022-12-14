@@ -1,0 +1,5 @@
+meta_product_name: "Calm Down"
+meta_title: "Calm Down - Don't let stress dictate your day!"
+meta_description: "An application allowing to listen to different son's relaxants, videos, relaxation exercises and motivational notifications."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
