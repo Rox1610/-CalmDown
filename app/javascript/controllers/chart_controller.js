@@ -24,7 +24,7 @@ export default class extends Controller {
         scales: {
           y: {
             ticks: {
-              callback: function(value, index, ticks) {
+              callback: function(value) {
                 if (value === 0)
                   return '😱'
                 else if (value === 1)
@@ -38,6 +38,14 @@ export default class extends Controller {
               }
             }
           },
+          x: {
+            ticks: {
+              callback: (index) => {
+                const rating = this.ratingsValue[index]
+                return new Date(rating.date).toLocaleDateString('en-CA', {dateStyle: 'medium'} );
+              }
+            }
+          }
         }
       }
     });
