@@ -1,19 +1,18 @@
 <div class="background-program padding-header-navbar">
   <div class="container">
+    <div class="d-flex justify-content-center">
+      <%= link_to kinesthetic_path do %>
+        <i class="fa-solid fa-dice-d20 program__icon"></i>
+      <% end %>
+      <%= link_to video_path do%>
+        <i class="fa-solid fa-clapperboard program__icon"></i>
+      <% end %>
+      <%= link_to audio_path do%>
+        <i class="fa-solid fa-headphones program__icon"></i>
+      <% end %>
+    </div>
+
     <h1>Program</h1>
-    <%= link_to kinesthetic_path do %>
-      <i class="fa-solid fa-dice-d20"></i>
-    <% end %>
-  &nbsp&nbsp
-    <%= link_to video_path do%>
-      <i class="fa-solid fa-clapperboard"></i>
-    <% end %>
-  &nbsp&nbsp
-    <%= link_to audio_path do%>
-      <i class="fa-solid fa-headphones"></i>
-    <% end %>
-
-
     <% @event.events_resources.each do |events_resource|%>
       <div>
         <% if events_resource.resource.category == "mixcloud" %>
