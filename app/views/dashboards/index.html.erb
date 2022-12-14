@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <div class="background-dash padding-header-navbar" >
   <h1>Dashboard</h1>
@@ -6,12 +7,12 @@
     <h4>A journey of a thousand <br>miles always begins with a <br>first step.</h4>
   </div>
 
-  <div class="container d-flex justify-content-center shadow p-3 mb-5 bg-white rounded">
+  <div class="container shadow p-3 mb-5 bg-white rounded">
     <div>
       <h6>Statistique</h6><br>
-    </div>
-    <div>
-      <img src="<%= asset_path('fake_graph.jpg') %>" class="img-fluid" alt="feeling-graph">
+      <div data-controller="chart" data-chart-ratings-value="<%= @ratings.to_json %>">
+        <canvas data-chart-target="graph" style="width: 400px"></canvas>
+      </div>
     </div>
   </div>
 
@@ -20,8 +21,8 @@
       <h6>Next event</h6><br>
     </div>
     <div class="container">
-      <p><%= @event.start_time if @event%></p><p><%= @event.end_time if @event%></p>
-      <p><%= @event.name if @event%></p>
+      <p><%= @next_event.start_time if @next_event%></p><p><%= @next_event.end_time if @next_event%></p>
+      <p><%= @next_event.name if @next_event%></p>
     </div>
   </div>
 </div>
