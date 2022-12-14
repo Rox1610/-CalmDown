@@ -1,4 +1,5 @@
 class DashboardsController < ApplicationController
+
   def calendar
     # Scope your query to the dates being shown:
     start_date = params.fetch(:start_date, Date.today).to_date
@@ -8,6 +9,8 @@ class DashboardsController < ApplicationController
 
   def index
     timezone_offset = -18_000
-    @event = current_user.events.where('start_time >= ?', (Time.current + timezone_offset)).order("start_time ASC").first
+    @ratings = current_user.events.order("start_time ASC").map do |event| { date: event.start_time, rating: event.diarie&.read_attribute_before_type_cast(:rating) } end
+    @next_event = current_user.events.where('start_time >= ?', (Time.current + timezone_offset)).order("start_time ASC").first
   end
+
 end

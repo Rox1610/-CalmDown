@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/audio', to: 'resources#audio', as: 'audio'
   get '/dashboard/calendar', to: 'dashboards#calendar', as: 'calendar'
   get '/dashboard', to: 'dashboards#index', as: 'dashboard'
+  get '/dashboard/graph', to: 'dashboards#graph', as: 'graph'
   get '/program', to: 'pages#program', as: 'program'
   get '/video', to: 'resources#video', as: 'video'
   # Defines the root path route ("/")
