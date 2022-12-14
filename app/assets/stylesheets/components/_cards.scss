@@ -18,6 +18,7 @@ p {
   font-family: "Montserrat Alternates";
 }
 
+
 .card-header-general{
   font-family: $ms-font;
   font-size: 15px;
@@ -26,23 +27,24 @@ p {
   border-top-right-radius: 12px;
 }
 
-.card{
+.card {
   border-radius: 12px;
   overflow: hidden;
 }
 
-.card-body{
+.card-body {
   font-family: $ms-font;
   font-size: 12px;
   text-align: justify;
 }
 
-.card-header{
+.card-header {
   box-shadow: -8px 7px 21px lightgrey;
   background-color: white;
+  text-align: left;
 
   }
 
-  .card-frame{
+  .card-frame {
     border-radius: 15px;
   }

@@ -2,3 +2,12 @@
   background: #137BB3;
   border-radius: 10px;
 }
+
+.btn-light {
+  border-radius: 50px;
+}
+
+.btn-light:hover {
+  background-color: lightgrey;
+  transition: 0.2ms;
+}
