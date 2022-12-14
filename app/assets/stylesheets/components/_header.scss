@@ -29,6 +29,7 @@ header h1 {
 }
 
 .logout-link-invisible {
+  cursor: not-allowed;
   opacity: 0;
   font-size: 10px;
   font-weight: lighter;
@@ -43,6 +44,7 @@ header h1 {
 }
 
 .logout-icon-invisible {
+  cursor: not-allowed;
   opacity: 0;
   font-size: 25px;
   padding-right: 11px;
