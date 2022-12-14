@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Calmdown</title>
+    <title>Calmdown : Don't let stress dictate your day!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,7 +15,11 @@
   <%= render "shared/header"%>
   <%= render "shared/flashes" %>
   <%= yield %>
-  <%= render "shared/navbar" %>
+  <% if current_page?(new_user_session_path) || current_page?(root_path) || current_page?(new_profile_path) %>
+    <%= !render "shared/navbar" %>
+    <% else %>
+    <%= render "shared/navbar" %>
+  <% end %>
 
   </body>
 </html>
