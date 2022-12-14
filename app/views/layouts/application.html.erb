@@ -15,7 +15,7 @@
   <%= render "shared/header"%>
   <%= render "shared/flashes" %>
   <%= yield %>
-  <% if current_page?(new_user_session_path) || current_page?(root_path) %>
+  <% if current_page?(new_user_session_path) || current_page?(root_path) || current_page?(new_profile_path) %>
     <%= !render "shared/navbar" %>
     <% else %>
     <%= render "shared/navbar" %>

@@ -20,17 +20,16 @@
     <span class="nav-text">Program</span>
   <% end %>
 
-  <%# <div class="nav-link"> %>
-    <% if user_signed_in? %>
-      <%= link_to dashboard_path, class: "nav-link" do %>
-        <%= image_tag "https://www.pinclipart.com/picdir/big/35-352860_zen-meditation-zen-meditation-chan-meditation-png-zen.png", class: "avatar", data: { bs_toggle: "dropup" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <span class="nav-text">Dashboard</span>
-      <% end %>
-    <% else %>
-      <%= link_to new_user_session_path, class: "nav-link" do %>
-        <i class="fa-regular fa-circle-user nav-icon"></i>
-        <span class="nav-text">Login</span>
-      <% end %>
+
+  <% if user_signed_in? %>
+    <%= link_to dashboard_path, class: "nav-link" do %>
+      <%= image_tag "https://www.pinclipart.com/picdir/big/35-352860_zen-meditation-zen-meditation-chan-meditation-png-zen.png", class: "avatar", data: { bs_toggle: "dropup" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <span class="nav-text">Dashboard</span>
     <% end %>
-  <%# </div> %>
+  <% else %>
+    <%= link_to new_user_session_path, class: "nav-link" do %>
+      <i class="fa-regular fa-circle-user nav-icon"></i>
+      <span class="nav-text">Login</span>
+    <% end %>
+  <% end %>
 </nav>
