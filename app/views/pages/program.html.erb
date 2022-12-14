@@ -13,17 +13,17 @@
     <% @event.events_resources.each do |events_resource|%>
       <div>
         <% if events_resource.resource.category == "mixcloud" %>
-          <% if events_resource.timing < 30 %>
-            <h6>15 minutes before - <%= @event.name %> Day</h6>
-          <% elsif events_resource.timing < 1440 %>
+          <% if events_resource.timing == 60 %>
+            <h6>30 minutes before - <%= @event.name %> Day</h6>
+          <% elsif events_resource.timing == 1440 %>
             <h6> 3 hours before - <%= @event.name %> Day</h6>
           <% else %>
             <h6> 5 hours before - <%= @event.name %> Day</h6>
           <% end %>
         <% else%>
-          <% if events_resource.timing < 30 %>
+          <% if events_resource.timing == 60 %>
             <h6>10 minutes before - <%= @event.name %> Day</h6>
-          <% elsif events_resource.timing < 1440 %>
+          <% elsif events_resource.timing == 1440 %>
             <h6> 1 hour before - <%= @event.name %> Day</h6>
           <% else %>
             <h6> 1 day before - <%= @event.name %> Day</h6>

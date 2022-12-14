@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[show edit update destroy program]
+  before_action :set_event, only: %i[show edit update destroy]
 
   def show
     @diaries = Diarie.where(user_id: current_user.id)
@@ -13,43 +13,41 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     timezone_offset = -18_000
-    minutes_in_a_day = 1440
-    half_hour = 30
     minutes_before_event = (@event.start_time - (Time.current + timezone_offset)).to_i / 60
     ActiveRecord::Base.transaction do
       @event.save!
-      if minutes_before_event < half_hour
+      if minutes_before_event < 60
         EventsResource.create!(
           event: @event,
           resource: Resource.find_by_name('rain'),
-          timing: half_hour
+          timing: 60
         )
         EventsResource.create!(
           event: @event,
           resource: Resource.find_by_name('visual'),
-          timing: half_hour
+          timing: 60
         )
-      elsif minutes_before_event >= minutes_in_a_day && minutes_before_event < (minutes_in_a_day * 2)
-        EventsResource.create!(
-          event: @event,
-          resource: Resource.find_by_name('rainforest'),
-          timing: minutes_in_a_day
-        )
-        EventsResource.create!(
-          event: @event,
-          resource: Resource.find_by_name('moutain'),
-          timing: minutes_in_a_day
-        )
-      elsif minutes_before_event > minutes_in_a_day * 2
+      elsif minutes_before_event >= 60 && minutes_before_event <= 2880
         EventsResource.create!(
           event: @event,
           resource: Resource.find_by_name('whale'),
-          timing: minutes_in_a_day * 2
+          timing: 1440
         )
         EventsResource.create!(
           event: @event,
           resource: Resource.find_by_name('aquarium'),
-          timing: minutes_in_a_day * 2
+          timing: 1440
+        )
+      elsif minutes_before_event > 2880
+        EventsResource.create!(
+          event: @event,
+          resource: Resource.find_by_name('rainforest'),
+          timing: 2880
+        )
+        EventsResource.create!(
+          event: @event,
+          resource: Resource.find_by_name('moutain'),
+          timing: 2880
         )
       end
       redirect_to calendar_path, notice: 'Event added'
@@ -67,11 +65,6 @@ class EventsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
-  end
-
-  def destroy
-    @event.destroy
-    redirect_to profile_path
   end
 
   private

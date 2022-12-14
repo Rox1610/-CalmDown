@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :blogs, except: %i[edit update delete]
   resources :profiles, only: %i[new create]
 
-  resources :events, except: %i[index] do
+  resources :events do
     resources :diaries, only: %i[new create]
   end
 end
