@@ -1,6 +1,6 @@
 class ResourcesController < ApplicationController
   def video
-    @resources = Resource.find_by(category: 0)
+    @resources = Resource.where(category: 0)
   end
 
   def kinesthetic
