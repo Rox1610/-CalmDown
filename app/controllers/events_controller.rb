@@ -14,6 +14,7 @@ class EventsController < ApplicationController
     @event.user = current_user
     timezone_offset = -18_000
     minutes_before_event = (@event.start_time - (Time.current + timezone_offset)).to_i / 60
+
     ActiveRecord::Base.transaction do
       @event.save!
       if minutes_before_event < 60
@@ -46,14 +47,14 @@ class EventsController < ApplicationController
         )
         EventsResource.create!(
           event: @event,
-          resource: Resource.find_by_name('moutain'),
+          resource: Resource.find_by_name('mountain'),
           timing: 2880
         )
       end
       redirect_to calendar_path, notice: 'Event added'
     end
   rescue ActiveRecord::RecordInvalid
-    render :new, status: :unprocessable_entity, notice: 'Something went wrong'
+    render :new, status: :unprocessable_entity, alert: 'Something went wrong'
   end
 
   def edit
