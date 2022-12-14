@@ -14,39 +14,40 @@ class EventsController < ApplicationController
     @event.user = current_user
     timezone_offset = -18_000
     minutes_before_event = (@event.start_time - (Time.current + timezone_offset)).to_i / 60
+    # raise
     ActiveRecord::Base.transaction do
-      @event.save!
+      @event.save
       if minutes_before_event < 60
-        EventsResource.create!(
+        EventsResource.create(
           event: @event,
           resource: Resource.find_by_name('rain'),
           timing: 60
         )
-        EventsResource.create!(
+        EventsResource.create(
           event: @event,
           resource: Resource.find_by_name('visual'),
           timing: 60
         )
       elsif minutes_before_event >= 60 && minutes_before_event <= 2880
-        EventsResource.create!(
+        EventsResource.create(
           event: @event,
           resource: Resource.find_by_name('whale'),
           timing: 1440
         )
-        EventsResource.create!(
+        EventsResource.create(
           event: @event,
           resource: Resource.find_by_name('aquarium'),
           timing: 1440
         )
       elsif minutes_before_event > 2880
-        EventsResource.create!(
+        EventsResource.create(
           event: @event,
           resource: Resource.find_by_name('rainforest'),
           timing: 2880
         )
-        EventsResource.create!(
+        EventsResource.create(
           event: @event,
-          resource: Resource.find_by_name('moutain'),
+          resource: Resource.find_by_name('mountain'),
           timing: 2880
         )
       end
