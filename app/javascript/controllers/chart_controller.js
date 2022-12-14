@@ -9,7 +9,6 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log(this.ratingsValue)
     new Chart(this.graphTarget, {
       type: 'line',
       data: {
