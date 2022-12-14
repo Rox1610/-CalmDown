@@ -1,28 +1,32 @@
 
-<div class="background-dash padding-header-navbar" >
-  <h1>Dashboard</h1>
+<div class="container background-dash padding-header-navbar px-2" >
+  <h1 class="mb-3">Dashboard</h1>
 
-  <div class="container d-flex justify-content-center shadow p-3 mb-5 bg-white rounded pb-15">
-    <h4>A journey of a thousand <br>miles always begins with a <br>first step.</h4>
+  <div class="card mb-3" style="max-width: 18rem align-items-center pt-2 rounded-right rounded left">
+    <div class="card-body">
+      <h4 id="h4-dashboard">A journey of a thousand miles always begins with a first step.</h4>
+    </div>
   </div>
 
-  <div class="container d-flex justify-content-center shadow p-3 mb-5 bg-white rounded">
-    <div>
-      <h6>Statistique</h6><br>
+  <div class="card text-dark bg-light mb-3" style="max-width: 18rem align-items-center pt-2 rounded-right rounded left">
+    <div class="card-header">
+      <h6 id="h6-dashboard">Statistique</h6>
     </div>
-    <div>
+    <div class="card-body">
       <img src="<%= asset_path('fake_graph.jpg') %>" class="img-fluid" alt="feeling-graph">
     </div>
   </div>
 
-  <div class="container d-flex justify-content-center shadow p-3 mb-5 bg-white rounded">
-    <div>
-      <h6>Next event</h6><br>
+
+  <div class="card text-dark bg-light mb-3" style="max-width: 18rem align-items-center pt-2 rounded-right rounded left">
+    <div class="card-header">
+      <h6 id="h6-dashboard">Next event</h6>
     </div>
-    <div class="container">
+    <div class="card-body">
     <%= "You haven't any events yet!" if @events.first.nil? %>
-      <p><%= @events.first.start_time if @events.first%></p><p><%= @events.first.end_time if @events.first%></p>
-      <p><%= @events.first.name if @events.first%></p>
+      <p id="text-nexteven"><%= @events.first.start_time if @events.first%></p>
+      <p id="text-nexteven"><%= @events.first.end_time if @events.first%></p>
+      <p id="text-nexteven"><%= @events.first.name if @events.first%></p>
     </div>
   </div>
 </div>
