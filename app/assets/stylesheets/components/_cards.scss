@@ -19,7 +19,7 @@ p {
 }
 
 
-.card-header-general{
+.card-header-general {
   font-family: $ms-font;
   font-size: 15px;
   font-weight: bold;
@@ -34,8 +34,9 @@ p {
 
 .card-body {
   font-family: $ms-font;
-  font-size: 12px;
+  font-size: 15px;
   text-align: justify;
+  padding-bottom: 2px;
 }
 
 .card-header {
@@ -48,3 +49,11 @@ p {
   .card-frame {
     border-radius: 15px;
   }
+
+#text.dashboard {
+  text-align: center;
+}
+
+#h6-program {
+  margin-bottom: 0px;
+}
