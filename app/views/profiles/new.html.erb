@@ -1,4 +1,4 @@
-<div class="container background-personality" data-controller="profile">
+<div class="background-personality" data-controller="profile">
   <div class="vh-100">
     <h1 class="mb-4">Personality test</h1>
     <h2> Tell us what relaxes you </h2>
@@ -23,12 +23,12 @@
 
         <div>
           <%= form.check_box :stars, class: "checkbox", data: {action: "change->profile#onCheck", "profile-target": "checkbox"} %>
-          <%= form.label :stars, "Travelling throught the stars" %>
+          <%= form.label :stars, "Travelling through the stars" %>
         </div>
 
         <div>
           <%= form.check_box :clouds, class: "checkbox", data: {action: "change->profile#onCheck", "profile-target": "checkbox"} %>
-          <%= form.label :clouds, "Being over the clouds" %>
+          <%= form.label :clouds, "Floating above the clouds" %>
         </div>
 
         <div>
