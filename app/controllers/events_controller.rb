@@ -12,11 +12,49 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    if @event.save
-      redirect_to event_path(@event), notice: 'Event added'
-    else
-      render :new, status: :unprocessable_entity
+    timezone_offset = -18_000
+    minutes_before_event = (@event.start_time - (Time.current + timezone_offset)).to_i / 60
+
+    ActiveRecord::Base.transaction do
+      @event.save!
+      if minutes_before_event < 60
+        EventsResource.create!(
+          event: @event,
+          resource: Resource.find_by_name('rain'),
+          timing: 60
+        )
+        EventsResource.create!(
+          event: @event,
+          resource: Resource.find_by_name('visual'),
+          timing: 60
+        )
+      elsif minutes_before_event >= 60 && minutes_before_event <= 2880
+        EventsResource.create!(
+          event: @event,
+          resource: Resource.find_by_name('whale'),
+          timing: 1440
+        )
+        EventsResource.create!(
+          event: @event,
+          resource: Resource.find_by_name('aquarium'),
+          timing: 1440
+        )
+      elsif minutes_before_event > 2880
+        EventsResource.create!(
+          event: @event,
+          resource: Resource.find_by_name('rainforest'),
+          timing: 2880
+        )
+        EventsResource.create!(
+          event: @event,
+          resource: Resource.find_by_name('mountain'),
+          timing: 2880
+        )
+      end
+      redirect_to calendar_path, notice: 'Event added'
     end
+  rescue ActiveRecord::RecordInvalid
+    render :new, status: :unprocessable_entity, alert: 'Something went wrong'
   end
 
   def edit
@@ -28,11 +66,6 @@ class EventsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
-  end
-
-  def destroy
-    @event.destroy
-    redirect_to profile_path
   end
 
   private

@@ -1,4 +1,3 @@
-
 <div class="background-program padding-header-navbar">
   <div class="container">
     <h1>Program</h1>
@@ -6,29 +5,41 @@
       <i class="fa-solid fa-dice-d20"></i>
     <% end %>
   &nbsp&nbsp
-    <%= link_to resources_path do%>
+    <%= link_to video_path do%>
       <i class="fa-solid fa-clapperboard"></i>
     <% end %>
+  &nbsp&nbsp
+    <%= link_to audio_path do%>
+      <i class="fa-solid fa-headphones"></i>
+    <% end %>
 
+    <% @event.events_resources.each do |events_resource|%>
+      <div>
+        <% if events_resource.resource.category == "mixcloud" %>
+          <% if events_resource.timing == 60 %>
+            <h6>30 minutes before - <%= @event.name %> Day</h6>
+          <% elsif events_resource.timing == 1440 %>
+            <h6> 3 hours before - <%= @event.name %> Day</h6>
+          <% else %>
+            <h6> 5 hours before - <%= @event.name %> Day</h6>
+          <% end %>
+        <% else%>
+          <% if events_resource.timing == 60 %>
+            <h6>10 minutes before - <%= @event.name %> Day</h6>
+          <% elsif events_resource.timing == 1440 %>
+            <h6> 1 hour before - <%= @event.name %> Day</h6>
+          <% else %>
+            <h6> 1 day before - <%= @event.name %> Day</h6>
+          <% end %>
+        <% end %>
 
-    <div class="card text-dark bg-light mb-3" style="max-width: 18rem align-items-center pt-2 rounded-right rounded left">
-      <div class="card-header">
-        <h6 class="card-title-general">5 hours before - Demo "stressing" Day</h6>
+        <p><%= events_resource.resource.description %></p>
+        <% if events_resource.resource.category == "mixcloud" %>
+          <iframe width="100%" height="60" src="<%= events_resource.resource.content %>" frameborder="0" ></iframe>
+        <% else %>
+          <iframe width="350" height="175" src="<%= events_resource.resource.content %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <% end %>
+      <% end %>
       </div>
-      <div class="card-body">
-        <p class="card-text">Take a place confortably and listen to the whale sing from Tadoussac </p>
-        <p><i class="fa-solid fa-play"></i>  &nbsp&nbspSound</p>
-      </div>
-    </div>
-
-    <div class="card text-dark bg-light mb-3" style="max-width: 18rem align-items-center pt-2 rounded-right rounded left">
-        <div class="card-header">
-          <h6 class="card-title-general">2 days before - Demo "stressing" Day</h6>
-        </div>
-        <div class="card-body justify-items-center">
-          <p class="card-text">Take a place confortably and relax by watching the aquarium </p>
-          <iframe width="318" height="150" src="<%= @resources.first.content %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
   </div>
 </div>

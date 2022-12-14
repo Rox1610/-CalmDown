@@ -4,7 +4,6 @@
     <h2> Tell us what relaxes you </h2>
     <h6 class="mb-4" id='h6-dashboard'>(Select 3)</h6>
     <%# <p class="mb-4">(Select 3)</p> %>
-
     <%= form_with url:profiles_path, method: :post do |form| %>
       <div class="row row-cols-2 ">
         <div>
@@ -46,7 +45,6 @@
           <%= form.check_box :whale, class: "checkbox", data: {action: "change->profile#onCheck", "profile-target": "checkbox"} %>
           <%= form.label :whale, "Singing whales" %>
         </div>
-
 
         <div>
             <%= form.check_box :mantra, class: "checkbox", data: {action: "change->profile#onCheck", "profile-target": "checkbox"} %>
