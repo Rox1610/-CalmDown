@@ -7,8 +7,12 @@
       <div class="card-body" id='content.event'>
         <h6><%= @event.start_time.strftime("%d %B %Y") %> from <%= @event.start_time.strftime("%Hh%M") %> to <%= @event.end_time.strftime("%Hh%M") %></h6>
         <h5><b>Description: </b><%= @event.description %></h5>
-        <h5><b>Feeling: </b> <%= @event.diarie.rating if @event.diarie %></h5>
-        <h5><b>How it went ?</b> <%= @event.diarie.description if @event.diarie %></h5>
+        <% if @event.diarie %>
+          <h5><b>Feeling: </b> <%= @event.diarie.rating %></h5>
+          <h5><b>How it went ?</b> <%= @event.diarie.description %></h5>
+        <% else %>
+          <h6></h6>
+        <% end %>
       </div>
     </div>
 
