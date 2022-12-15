@@ -2,21 +2,15 @@
   <div class="container-fluid">
     <h1 class="header-h1">CalmDown</h1>
   </div>
-
-  <%# <div>
-    <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "logout-link-invisible" %>
-    <%# <i class="fa-solid fa-arrow-right-from-bracket logout-icon-invisible"></i>
-  </div> %>
-
-    <div>
-      <% if user_signed_in? %>
-        <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "logout-link" do %>
-          <i class="fa-solid fa-arrow-right-from-bracket logout-icon"></i>
-        <% end %>
-      <% else %>
-        <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "logout-link-invisible" do %>
-          <i class="fa-solid fa-arrow-right-from-bracket logout-icon-invisible"></i>
-        <% end %>
+  <div>
+    <% if user_signed_in? %>
+      <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "logout-link" do %>
+        <i class="fa-solid fa-arrow-right-from-bracket logout-icon"></i>
       <% end %>
-    </div>
+    <% else %>
+      <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "logout-link-invisible" do %>
+        <i class="fa-solid fa-arrow-right-from-bracket logout-icon-invisible"></i>
+      <% end %>
+    <% end %>
+  </div>
 </header>
