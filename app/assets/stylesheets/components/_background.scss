@@ -22,15 +22,15 @@
   background-image: image-url('blogs.jpeg');
   background-size: cover;
   height: 150%;
-  padding-bottom: 30px;
+  padding-bottom: 80px;
 
 }
 
 .background-calendar {
-  background-image: image-url('sign-in.jpeg');
+  background-image: image-url('event.jpeg');
   background-size: cover;
-  height: 135%;
-  padding-bottom: 10px;
+  height: 130%;
+  padding-bottom: 20px;
 }
 
 .background-cardiac {
@@ -79,3 +79,10 @@
   padding-top: 80px;
   padding-bottom: 80px;
 }
+
+// .blur {
+// 	width: auto;
+// 	position: relative;
+// 	background: transparent url(screenfeed.png) 3px 3px no-repeat;
+// 	opacity: .9;
+// }
