@@ -25,8 +25,8 @@
       <h6 id="h6-dashboard">Next event</h6>
     </div>
     <div class="card-body">
-      <h6><%= @next_event.name if @next_event%></h6>
-      <p><%= @next_event.start_time.strftime("%d %B %Y") if @next_event %> at <%= @next_event.start_time.strftime("%Hh%M") if @next_event %></p>
+      <h5><%= @next_event.name if @next_event%></h5>
+      <h6><%= @next_event.start_time.strftime("%d %B %Y") if @next_event %> at <%= @next_event.start_time.strftime("%Hh%M") if @next_event %></h6>
     </div>
   </div>
 </div>
