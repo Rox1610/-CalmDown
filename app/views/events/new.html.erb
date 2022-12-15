@@ -1,11 +1,11 @@
-<div class="background-event padding-header-navbar">
+<div class="background-event padding-header-navbar px-3">
   <div class="vh-100">
     <h1 class="mb-3">Add your event</h1>
       <%= simple_form_for @event do |f| %>
-        <%= f.input :start_time, as: :datetime, html5: true, placeholder: "Event start date" %>
-        <%= f.input :end_time, as: :datetime, html5: true, placeholder: "Event end date" %>
-        <%= f.input :name, required: true, placeholder: "Enter a title" %>
-        <%= f.input :description, placeholder: "Complete the description of the event" %>
+        <%= f.input :start_time, as: :datetime, html5: true %>
+        <%= f.input :end_time, as: :datetime, html5: true %>
+        <%= f.input :name, required: true, placeholder: "Name of your big event" %>
+        <%= f.input :description, placeholder: "What is it about?" %>
         <%= f.submit class: 'btn btn-flat' %>
       <% end %>
   </div>
