@@ -1,10 +1,10 @@
 <div class="background-video padding-header-navbar">
   <div class="container">
     <h1>Video library</h1>
-      <% @resources.each do |resource| %>
+    <% @resources.each do |resource| %>
       <div class="card mb-2">
-          <iframe width="350" height="175" src="<%= resource.content %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="350" height="175" src="<%= resource.content %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <% end %>
+    <% end %>
   </div>
 </div>
