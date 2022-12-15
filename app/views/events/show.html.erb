@@ -1,25 +1,21 @@
 <div class="background-event padding-header-navbar">
   <div class="vh-100">
-    <div id="text-event" class="card text-dark bg-light mb-3 mx-2" style="max-width: 18rem align-items-center pt-2">
+    <div id="text-event" class="card text-dark bg-light mb-3 mx-2 my-4" style="max-width: 18rem align-items-center pt-2">
       <div class="card-header">
       <h3 class="card-title-general"><%= @event.name %></h3>
       </div>
       <div class="card-body" id='content.event'>
-        <p><%= @event.start_time.strftime("%d %B %Y") %> at <%= @event.start_time.strftime("%Hh%M") %></p>
-        <p><%= @event.end_time.strftime("%d %B %Y") %> at <%= @event.end_time.strftime("%Hh%M") %></p>
-        <p><%= @event.description %></p>
-        <p><%= @event.diarie.rating if @event.diarie %></p>
-        <p><%= @event.diarie.description if @event.diarie %></p>
+        <h6><%= @event.start_time.strftime("%d %B %Y") %> from <%= @event.start_time.strftime("%Hh%M") %> to <%= @event.end_time.strftime("%Hh%M") %></h6>
+        <h5><b>Description: </b><%= @event.description %></h5>
+        <h5><b>Feeling: </b> <%= @event.diarie.rating if @event.diarie %></h5>
+        <h5><b>How it went ?</b> <%= @event.diarie.description if @event.diarie %></h5>
       </div>
     </div>
 
 
     <div class="d-flex justify-content-evenly mb-2">
-      <%= link_to 'Add an event review', new_event_diary_path(@event), class: 'btn btn-light' if @event.diarie.nil? %>
-      <%= link_to 'Update event', edit_event_path(@event), class: 'btn btn-light' %>
-    </div>
-    <div class="d-flex justify-content-center">
-      <%= link_to 'Return to calendar', calendar_path, class: 'btn btn-light' %>
+      <%= link_to 'Add an event review', new_event_diary_path(@event), class: 'btn btn-primary' if @event.diarie.nil? %>
+      <%= link_to 'Update event', edit_event_path(@event), class: 'btn btn-primary' %>
     </div>
   </div>
 </div>
