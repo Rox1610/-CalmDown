@@ -24,16 +24,16 @@
     <br>
     <br>
 
-      <% @blogs.each do |blog| %>
+    <% @blogs.each do |blog| %>
 
-        <div class="card text-dark bg-light mb-3" style="max-width: 18rem align-items-center pt-2 rounded-right rounded left">
-          <div class="card-header">
-            <h3 class="card-title-general"><%= link_to blog.title, blog_path(blog), class: "text-decoration-none text-dark card-header-general" %></h3>
-          </div>
-          <div class="card-body">
-            <p class="card-text"><%= blog.content.truncate(100, omission: '... (continued)') %> </p>
-          </div>
+      <div class="card text-dark bg-light mb-3" style="max-width: 18rem align-items-center pt-2 rounded-right rounded left">
+        <div class="card-header">
+          <h3 class="card-title-general"><%= link_to blog.title, blog_path(blog), class: "text-decoration-none text-dark card-header-general" %></h3>
         </div>
-      <% end %>
+        <div class="card-body">
+          <p class="card-text"><%= blog.content.truncate(100, omission: '... (continued)') %> </p>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
