@@ -2,7 +2,9 @@
   <div class="container">
     <h1>Video library</h1>
       <% @resources.each do |resource| %>
-        <iframe width="350" height="175" src="<%= resource.content %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="card mb-2">
+          <iframe width="350" height="175" src="<%= resource.content %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
       <% end %>
   </div>
 </div>
