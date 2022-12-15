@@ -1,6 +1,6 @@
 <header class="header static-top d-flex" data-controller="header">
   <div class="container-fluid">
-    <h1 class="header-h1">CalmDown</h1>
+    <%= link_to "CalmDown", dashboard_path, class: "header-h1" %>
   </div>
   <div>
     <% if user_signed_in? %>

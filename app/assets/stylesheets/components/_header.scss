@@ -8,13 +8,14 @@ header {
   transition: 0.3s ease-in-out;
 }
 
-header h1 {
-  padding-left: 42px;
+.header-h1 {
+  padding-left: 78px;
   margin-bottom: 0;
-  font-size: 40px;
+  font-size: 34px;
   color: rgba(0, 0, 0, 1);
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   margin-bottom: 0px;
+  text-decoration: none;
 }
 
 .logout-link {
@@ -39,8 +40,8 @@ header h1 {
 
 .logout-icon {
   font-size: 25px;
-  padding-right: 11px;
-  padding-top: 11px;
+  padding-right: 13px;
+  padding-top: 13px;
 }
 
 .logout-icon-invisible {
