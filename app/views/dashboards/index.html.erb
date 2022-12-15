@@ -26,7 +26,11 @@
     </div>
     <div class="card-body">
       <h6><%= @next_event.name if @next_event%></h6>
-      <p><%= @next_event.start_time.strftime("%d %B %Y") if @next_event %> at <%= @next_event.start_time.strftime("%Hh%M") if @next_event %></p>
+      <% if @next_event.present? %>
+        <p><%= @next_event.start_time.strftime("%d %B %Y") %> at <%= @next_event.start_time.strftime("%Hh%M") %></p>
+      <% else %>
+        <p>You do not have any event scheduled.</p>
+      <% end %>
     </div>
   </div>
 </div>
