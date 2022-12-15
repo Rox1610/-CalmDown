@@ -2,7 +2,7 @@
   <div class="vh-100">
     <h1 class="mb-3">Add your event</h1>
       <%= simple_form_for @event do |f| %>
-        <%= f.input :start_time, as: :datetime, html5: true, placeholder: "Event start date", class: 'datestart'%>
+        <%= f.input :start_time, as: :datetime, html5: true, placeholder: "Event start date" %>
         <%= f.input :end_time, as: :datetime, html5: true, placeholder: "Event end date" %>
         <%= f.input :name, required: true, placeholder: "Enter a title" %>
         <%= f.input :description, placeholder: "Complete the description of the event" %>
