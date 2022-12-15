@@ -1,14 +1,16 @@
-<div class="calendar-container padding-header-navbar">
-  <%= month_calendar(events: @events, end_attribute: :end_time) do |date, events| %>
-    <%= date %>
+<div class="background-calendar pt-2">
+  <div class="vh-100">
+    <%= month_calendar(events: @events, end_attribute: :end_time) do |date, events| %>
+      <%= date %>
 
-    <% events.each do |event| %>
-      <div class="event">
-        <small><%= event.time unless event.multi_days? %></small>
-          <%= link_to event_path(event) do %>
-          <p><%= event.name %></p>
+      <% events.each do |event| %>
+        <div class="event">
+          <%# <small><%= event.time unless event.multi_days?</small>  %>
+            <%= link_to event_path(event) do %>
+            <p><%= event.name %></p>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
+  </div>
 </div>
