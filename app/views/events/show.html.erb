@@ -5,8 +5,8 @@
       <h3 class="card-title-general"><%= @event.name %></h3>
       </div>
       <div class="card-body" id='content.event'>
-        <p><%= @event.start_time %></p>
-        <p><%= @event.end_time %></p>
+        <p><%= @event.start_time.strftime("%d %B %Y") %> at <%= @event.start_time.strftime("%Hh%M") %></p>
+        <p><%= @event.end_time.strftime("%d %B %Y") %> at <%= @event.end_time.strftime("%Hh%M") %></p>
         <p><%= @event.description %></p>
         <p><%= @event.diarie.rating if @event.diarie %></p>
         <p><%= @event.diarie.description if @event.diarie %></p>
