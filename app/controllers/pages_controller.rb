@@ -19,5 +19,9 @@ class PagesController < ApplicationController
   def program
     timezone_offset = -18_000
     @event = current_user.events.where('start_time >= ?', (Time.current + timezone_offset)).order("start_time ASC").first
+    if @event
+    else
+      redirect_to new_event_path
+    end
   end
 end
