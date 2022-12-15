@@ -21,11 +21,21 @@
 }
 
 #balloon {
-  // display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 circle {
   justify-content: center;
+}
+
+.container-coher {
+ display: block;
+ justify-content: center;
+ align-items: center;
+}
+
+.text-coher {
+  text-shadow: 0px 0px 5px white;
 }
