@@ -1,5 +1,4 @@
 <nav class="navbar navbar-expand fixed-bottom p-2">
-
   <%= link_to blogs_path, class: "nav-link" do %>
     <i class="fa-regular fa-comments nav-icon"></i>
     <span class="nav-text">Blog</span>
@@ -19,7 +18,6 @@
     <i class="fa-solid fa-list nav-icon"></i>
     <span class="nav-text">Program</span>
   <% end %>
-
 
   <% if user_signed_in? %>
     <%= link_to dashboard_path, class: "nav-link" do %>

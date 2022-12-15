@@ -1,49 +1,48 @@
 <div class="background-calendar padding-header-navbar">
-<div class='vh-100'>
-  <div class="simple-calendar mx-3">
-    <h2 class='mt-2'>Schedule your event to get your personalized program</h2>
+  <div class='vh-100'>
+    <div class="simple-calendar mx-3">
+      <h2 class='mt-2'>Schedule your event to get your personalized program</h2>
 
-    <div class="d-flex justify-content-center align-items-center position-relative pt-1">
-      <h3 class ="text-center mb-2">Calendar</h3>
-      <%= link_to new_event_path, class: 'position-absolute top-50 end-0 translate-middle-y' do %>
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" class="bi bi-plus-lg" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
-</svg>
-<% end %>
-    </div>
-
-    <div class="calendar-container">
-      <div class="d-flex align-items-center justify-content-around">
-        <div class="calendar-heading my-2 d-flex justify-content-center">
-          <%= link_to t('simple_calendar.previous', default: '<'), calendar.url_for_previous_view, class: 'btn btn-primary' %>
-          <span class="calendar-title btn btn-outline-dark btn btn-light"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-          <%= link_to t('simple_calendar.next', default: '>'), calendar.url_for_next_view, class: 'btn btn-primary' %>
-        </div>
+      <div class="d-flex justify-content-center align-items-center position-relative pt-1">
+        <h3 class ="text-center mb-2">Calendar</h3>
+        <%= link_to new_event_path, class: 'position-absolute top-50 end-0 translate-middle-y' do %>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="black" class="bi bi-plus-lg" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+          </svg>
+        <% end %>
       </div>
 
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <% date_range.slice(0, 7).each do |day| %>
-              <th><%= t('date.abbr_day_names')[day.wday] %></th>
-            <% end %>
-          </tr>
-        </thead>
+      <div class="calendar-container">
+        <div class="d-flex align-items-center justify-content-around">
+          <div class="calendar-heading my-2 d-flex justify-content-center">
+            <%= link_to t('simple_calendar.previous', default: '<'), calendar.url_for_previous_view, class: 'btn btn-primary' %>
+            <span class="calendar-title btn btn-outline-dark btn btn-light"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+            <%= link_to t('simple_calendar.next', default: '>'), calendar.url_for_next_view, class: 'btn btn-primary' %>
+          </div>
+        </div>
 
-        <tbody>
-          <% date_range.each_slice(7) do |dates| %>
+        <table class="table table-striped">
+          <thead>
             <tr>
-              <% dates.each do |date| %>
-                <%= content_tag :td, class: calendar.td_classes_for(date) do %>
-                    <% passed_block.call date.day, sorted_events.fetch(date, []) %>
-                <% end %>
+              <% date_range.slice(0, 7).each do |day| %>
+                <th><%= t('date.abbr_day_names')[day.wday] %></th>
               <% end %>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
+          </thead>
 
-  </div>
+          <tbody>
+            <% date_range.each_slice(7) do |dates| %>
+              <tr>
+                <% dates.each do |date| %>
+                  <%= content_tag :td, class: calendar.td_classes_for(date) do %>
+                      <% passed_block.call date.day, sorted_events.fetch(date, []) %>
+                  <% end %>
+                <% end %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>

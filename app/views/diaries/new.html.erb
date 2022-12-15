@@ -2,9 +2,10 @@
 <div class="container background-event pt-4 mt-5">
   <div class="vh-100">
     <h1>Comment your event</h1>
-      <%= simple_form_for [@event, @diarie] do |f| %>
-        <%= f.input :rating, collection: Diarie.ratings.keys %>
-        <%= f.input :description, placeholder: "Explain how the event went" %>
-        <%= f.button :submit, 'Add your review', class: 'btn btn-primary' %>
-      <% end %>
+    <%= simple_form_for [@event, @diarie] do |f| %>
+      <%= f.input :rating, collection: Diarie.ratings.keys %>
+      <%= f.input :description, placeholder: "Explain how the event went" %>
+      <%= f.button :submit, 'Add your review', class: 'btn btn-primary' %>
+    <% end %>
   </div>
+</div>

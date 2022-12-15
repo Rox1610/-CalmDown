@@ -30,15 +30,13 @@
   </head>
 
   <body>
-
-  <%= render "shared/header"%>
-  <%= render "shared/flashes" %>
-  <%= yield %>
-  <% if current_page?(new_user_session_path) || current_page?(root_path) || current_page?(new_profile_path) %>
-    <%= render "shared/navbar-disable" %>
+    <%= render "shared/header"%>
+    <%= render "shared/flashes" %>
+    <%= yield %>
+    <% if current_page?(new_user_session_path) || current_page?(root_path) || current_page?(new_profile_path) %>
+      <%= render "shared/navbar-disable" %>
     <% else %>
-    <%= render "shared/navbar" %>
-  <% end %>
-
+      <%= render "shared/navbar" %>
+    <% end %>
   </body>
 </html>
