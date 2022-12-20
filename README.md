@@ -9,7 +9,7 @@ The following* features were implemented in the app. Here is the user story time
 <img width="332" alt="Screen Shot 2022-12-20 at 11 27 59 AM" src="https://user-images.githubusercontent.com/114940509/208716718-b95f3a94-8273-4440-b089-8b370224ae7a.png">
 
 
--When the user completed the quizz, he/she is able to add an event to the calendar. A personalised program is also generated based on the profile and the timing of the event. Links to audio/video library and a cardiac coherence exercise are also available:
+- When the user completed the quizz, he/she is able to add an event to the calendar. A personalised program is also generated based on the profile and the timing of the event. Links to audio/video library and a cardiac coherence exercise are also available:
 
 <img width="332" alt="Screen Shot 2022-12-20 at 11 24 47 AM" src="https://user-images.githubusercontent.com/114940509/208716033-1d7326b0-aff2-45ec-8ea4-8173a6e1b964.png">
 
